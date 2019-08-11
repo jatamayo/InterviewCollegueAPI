@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 
-// _____________________________________________
+// _________________________________________________________
 // CALL *controllers/students.controller.js* file connection
 const students = require('../controllers/students.controller');
 
-
+console.log("testing3")
 // Get All method
 router.get('/', students.getStudents);
 // Get One method

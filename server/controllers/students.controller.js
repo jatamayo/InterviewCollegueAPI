@@ -21,7 +21,12 @@ studentsCtrl.getStudent = async (req, res, next) => {
 
 // Post method
 studentsCtrl.createStudent = async (req, res, next) => {
-    const student = new Students(req.body);
+    const student = new Students({
+        name: req.body.name,
+        lastName: req.body.lastName,
+        gender: req.body.gender,
+        birthday: req.body.birthday
+    });
     await student.save();
     res.json({
         status: 'Employee Saved'

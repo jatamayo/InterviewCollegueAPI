@@ -12,4 +12,4 @@ const studentSchema = new Schema({
 
 
 // Convert Schema to mongoose model/format
-module.exports = mongoose.model('degrees', studentSchema);
+module.exports = mongoose.model('students', studentSchema);
