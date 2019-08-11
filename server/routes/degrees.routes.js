@@ -10,12 +10,12 @@ console.log("testing3")
 // Get All method
 router.get('/', degrees.getDegrees);
 // Get One method
-router.get('/:id', degrees.getDegrees);
+router.get('/:id', degrees.getDegree);
 // Post method
-router.post('/', degrees.createDegrees);
+router.post('/', degrees.createDegree);
 // Put method
-router.put('/:id', degrees.editDegrees);
+router.put('/:id', degrees.editDegree);
 // Delete method
-router.delete('/:id', degrees.deleteDegrees);
+router.delete('/:id', degrees.deleteDegree);
 
 module.exports = router;

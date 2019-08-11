@@ -9,7 +9,7 @@ const degreesCtrl = {};
 // Consultas to DB
 // Get All method
 degreesCtrl.getDegrees = async (req, res, next) => {
-    const degrees = await degrees.find();
+    const degrees = await Degrees.find();
     res.json(degrees);
 };
 
