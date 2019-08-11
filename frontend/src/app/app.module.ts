@@ -13,11 +13,15 @@ import { AppComponent } from './app.component';
 // ____________________________________________________________________________
 // CALL *StudentsComponent* From file './components/students/students.component'
 import { StudentsComponent } from './components/students/students.component';
+import { TeachersComponent } from './components/teachers/teachers.component';
+import { DegreesComponent } from './components/degrees/degrees.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsComponent
+    StudentsComponent,
+    TeachersComponent,
+    DegreesComponent
   ],
   imports: [
     BrowserModule,
