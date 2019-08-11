@@ -6,7 +6,7 @@ const Students = require('../models/students');
 
 const studentsCtrl = {};
 
-
+// Consultas to DB
 // Get All method
 studentsCtrl.getStudents = async (req, res, next) => {
     const students = await Students.find();

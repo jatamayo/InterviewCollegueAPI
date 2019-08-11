@@ -21,6 +21,9 @@ app.use(cors({origin:'http://localhost:4200'}));
 // _____________________________________________
 // CALL *routes/students.routes.js* file connection
 app.use('/api/students', require('./routes/students.routes'));
+// _____________________________________________
+// CALL *routes/teachers.routes.js* file connection
+app.use('/api/teachers', require('./routes/teachers.routes'));
 
 
 // Starting server
