@@ -56,7 +56,7 @@
                     <th>Operaciones</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let student of studentsService.students">
+                    <tr style="border:1px solid silver" *ngFor="let student of studentsService.students">
                         <td class="student_id">ID: {{ student._id }}</td>
                         <td>{{ student.name }}</td>
                         <td>{{ student.lastName }}</td>

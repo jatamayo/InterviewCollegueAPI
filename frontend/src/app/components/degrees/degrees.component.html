@@ -47,7 +47,7 @@
                     <th>Operaciones</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let degree of degreesService.degrees">
+                    <tr style="border:1px solid silver" *ngFor="let degree of degreesService.degrees">
                         <td class="student_id">ID: {{ degree._id }}</td>
                         <td>{{ degree.name }}</td>
                         <td>{{ degree.teacherID }}</td>

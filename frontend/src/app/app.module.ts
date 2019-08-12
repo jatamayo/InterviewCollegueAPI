@@ -15,13 +15,15 @@ import { AppComponent } from './app.component';
 import { StudentsComponent } from './components/students/students.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { DegreesComponent } from './components/degrees/degrees.component';
+import { StudentGradeComponent } from './components/student-grade/student-grade.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentsComponent,
     TeachersComponent,
-    DegreesComponent
+    DegreesComponent,
+    StudentGradeComponent
   ],
   imports: [
     BrowserModule,

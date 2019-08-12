@@ -1,0 +1,75 @@
+<!-- **************************   Students Component   ************************** -->
+<!--  -->
+<div class="flex-container">
+        <span class="title">GRADO ESTUDIANTES</span>
+    </div>
+    <!--  -->
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="hederForm">
+                        <p class="headerForm_Title">Formulario Estuantes</p>
+                    </div>
+                    <div class="card-content">
+                        <form action="" #studentForm="ngForm" (ngSubmit)="createStudent(studentForm)">
+                            <!-- <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="studentsService.selectedStudent._id"> -->
+                            <div class="row mainContainer_box">
+                                <!--  -->
+                                <div class="input-field col s12">
+                                    <input type="hidden" name="_id" disable="disable" #_id="ngModel" [(ngModel)]="studentsService.selectedStudent._id" placeholder="UserID">
+                                </div>
+                                <div class="input-field col s12">
+                                    <input type="text" name="name" #name="ngModel" [(ngModel)]="studentsService.selectedStudent.name" placeholder="AlumnoID">
+                                </div>
+                                <div class="input-field col s6">
+                                    <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="studentsService.selectedStudent.lastName" placeholder="GradoID">
+                                </div>
+                                <div class="input-field col s6">
+                                    <input type="text" name="gender" #gender="ngModel" [(ngModel)]="studentsService.selectedStudent.gender" placeholder="Seccion">
+                                </div>
+                                <!--  -->
+                                <div class="card-action">
+                                    <div class="input-field col s12">
+                                        <button class="btn left saveButton">Guardar</button>
+                                        <button class="btn right clearButton" (click)="resetForm(studentForm)">Limpiar</button>
+                                    </div>
+                                </div>
+                                <!--  -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="col s12 dataContainer">
+                <table>
+                     <thead class="dataContainer_Header">
+                        <th>ID</th>
+                        <th>name</th>
+                        <th>lastName</th>
+                        <th>gender</th>
+                        <th>birthDay</th>
+                        <th>Operaciones</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let student of studentsService.students">
+                            <td class="student_id">ID: {{ student._id }}</td>
+                            <td>{{ student.name }}</td>
+                            <td>{{ student.lastName }}</td>
+                            <td>{{ student.gender }}</td>
+                            <td>{{ student.birthDay }}</td>
+                            <td>
+                                <a (click)="editStudent(student)">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <a (click)="deleteStudent(student._id)">
+                                    <i class="material-icons">delete</i>
+                                </a>                            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
