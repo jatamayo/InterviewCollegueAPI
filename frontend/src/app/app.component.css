@@ -1,0 +1,13 @@
+.nav-wrapper{
+    background-color: black;
+    height: 80px;
+}
+.meanLogo{
+    width: 150px;
+    height: 70px;
+    
+}
+.headerTitle{
+    font-weight: bolder;
+    margin-left: 30px;
+}

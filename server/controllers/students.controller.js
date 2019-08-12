@@ -25,7 +25,7 @@ studentsCtrl.createStudent = async (req, res, next) => {
         name: req.body.name,
         lastName: req.body.lastName,
         gender: req.body.gender,
-        birthday: req.body.birthday
+        birthDay: req.body.birthDay
     });
     await student.save();
     res.json({
@@ -39,7 +39,7 @@ studentsCtrl.editStudent = async (req, res, next) => {
         name: req.body.name,
         lastName: req.body.lastName,
         gender: req.body.gender,
-        birthday: req.body.birthday, 
+        birthDay: req.body.birthDay, 
     }
     await Students.findByIdAndUpdate(req.params.id, {$set: student}, {new:true});
     res.json({

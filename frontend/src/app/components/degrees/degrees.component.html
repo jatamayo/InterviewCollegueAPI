@@ -1,1 +1,67 @@
-<p>degrees works!</p>
+<!-- **************************   Degrees Component   ************************** -->
+<!--  -->
+<div class="flex-container">
+    <span class="title">GRADOS</span>
+</div>
+<!--  -->
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="hederForm">
+                    <p class="headerForm_Title">Formulario Grados</p>
+                </div>
+                <div class="card-content">
+                    <form action="" #degreeForm="ngForm" (ngSubmit)="createDegree(degreeForm)">
+                        <div class="row mainContainer_box">
+                            <!--  -->
+                            <div class="input-field col s12">
+                                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="degreesService.selectedDegree._id" placeholder="">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="name" #name="ngModel" [(ngModel)]="degreesService.selectedDegree.name" placeholder="Nombre">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="teacherID" #teacherID="ngModel" [(ngModel)]="degreesService.selectedDegree.teacherID" placeholder="teacherID">
+                            </div>
+                            <!--  -->
+                            <div class="card-action">
+                                <div class="input-field col s12">
+                                    <button class="btn left saveButton">Guardar</button>
+                                    <button class="btn right clearButton" (click)="resetForm(degreeForm)">Limpiar</button>
+                                </div>
+                            </div>
+                            <!--  -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="col s12 dataContainer">
+            <table>
+                <thead class="dataContainer_Header">
+                    <th>ID</th>
+                    <th>name</th>
+                    <th>teacherID</th>
+                    <th>Operaciones</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let degree of degreesService.degrees">
+                        <td class="student_id">ID: {{ degree._id }}</td>
+                        <td>{{ degree.name }}</td>
+                        <td>{{ degree.teacherID }}</td>
+                        <td>
+                            <a (click)="editDegree(degree)">
+                                <i class="material-icons">edit</i>
+                            </a>
+                            <a (click)="deleteDegree(degree._id)">
+                                <i class="material-icons">delete</i>
+                            </a>                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

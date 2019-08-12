@@ -23,8 +23,7 @@ teachersCtrl.getTeacher = async (req, res, next) => {
 teachersCtrl.createTeacher = async (req, res, next) => {
     const teacher = new Teachers({
         name: req.body.name,
-        lastName: req.body.lastName,
-        gender: req.body.gender
+        teacherID: req.body.teacherID
     });
     await teacher.save();
     res.json({
@@ -36,8 +35,7 @@ teachersCtrl.createTeacher = async (req, res, next) => {
 teachersCtrl.editTeacher = async (req, res, next) => {
     const teacher = {
         name: req.body.name,
-        lastName: req.body.lastName,
-        gender: req.body.gender
+        teacherID: req.body.teacherID
     }
     await Teachers.findByIdAndUpdate(req.params.id, {$set: teacher}, {new:true});
     res.json({

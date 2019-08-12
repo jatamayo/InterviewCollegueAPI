@@ -23,7 +23,7 @@ degreesCtrl.getDegree = async (req, res, next) => {
 degreesCtrl.createDegree = async (req, res, next) => {
     const degree = new Degrees({
         name: req.body.name,
-        teahcerID: req.body.teacherID
+        teacherID: req.body.teacherID
     });
     await degree.save();
     res.json({

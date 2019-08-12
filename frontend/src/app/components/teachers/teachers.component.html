@@ -1,1 +1,75 @@
-<p>teachers works!</p>
+<!-- **************************   Teachers Component   ************************** -->
+<!--  -->
+<div class="flex-container">
+    <span class="title">MAESTROS</span>
+</div>
+<!--  -->
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="hederForm">
+                    <p class="headerForm_Title">Formulario Maestros</p>
+                </div>
+                <div class="card-content">
+                    <form action="" #teacherForm="ngForm" (ngSubmit)="createTeacher(teacherForm)">
+                        <div class="row mainContainer_box">
+                            <!--  -->
+                            <div class="input-field col s12">
+                                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="teachersService.selectedTeacher._id" placeholder="">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="name" #name="ngModel" [(ngModel)]="teachersService.selectedTeacher.name" placeholder="Nombre">
+                            </div>
+                            <div class="input-field col s6">
+                                <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="teachersService.selectedTeacher.lastName" placeholder="Apellido">
+                            </div>
+                            <div class="input-field col s6">
+                                <input type="text" name="gender" #gender="ngModel" [(ngModel)]="teachersService.selectedTeacher.gender" placeholder="Genero">
+                            </div>
+                            <!-- <div class="input-field col s6">
+                                <input type="text" name="birthDay" #birthDay="ngModel" [(ngModel)]="teachersService.selectedTeacher.birthDay" placeholder="Fecha de nacimiento">
+                            </div> -->
+                            <!--  -->
+                            <div class="card-action">
+                                <div class="input-field col s12">
+                                    <button class="btn left saveButton">Guardar</button>
+                                    <button class="btn right clearButton" (click)="resetForm(teacherForm)">Limpiar</button>
+                                </div>
+                            </div>
+                            <!--  -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="col s12 dataContainer">
+            <table>
+                <thead class="dataContainer_Header">
+                    <th>ID</th>
+                    <th>name</th>
+                    <th>lastName</th>
+                    <th>gender</th>
+                    <th>Operaciones</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let teacher of teachersService.teachers">
+                        <td class="student_id">ID: {{ teacher._id }}</td>
+                        <td>{{ teacher.name }}</td>
+                        <td>{{ teacher.lastName }}</td>
+                        <td>{{ teacher.gender }}</td>
+                        <td>
+                            <a (click)="editTeacher(teacher)">
+                                <i class="material-icons">edit</i>
+                            </a>
+                            <a (click)="deleteTeacher(teacher._id)">
+                                <i class="material-icons">delete</i>
+                            </a>                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

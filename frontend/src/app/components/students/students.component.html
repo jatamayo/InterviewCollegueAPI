@@ -1,33 +1,41 @@
 <!-- **************************   Students Component   ************************** -->
+<!--  -->
+<div class="flex-container">
+    <span class="title">ESTUDIANTES</span>
+</div>
+<!--  -->
 <div class="container">
     <div class="row">
-        <div class="col s5">
+        <div class="col s12">
             <div class="card">
+                <div class="hederForm">
+                    <p class="headerForm_Title">Formulario Estuantes</p>
+                </div>
                 <div class="card-content">
                     <form action="" #studentForm="ngForm" (ngSubmit)="createStudent(studentForm)">
                         <!-- <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="studentsService.selectedStudent._id"> -->
-                        <div class="row">
+                        <div class="row mainContainer_box">
                             <!--  -->
                             <div class="input-field col s12">
-                                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="studentsService.selectedStudent._id" placeholder="">
+                                <input type="hidden" name="_id" disable="disable" #_id="ngModel" [(ngModel)]="studentsService.selectedStudent._id" placeholder="UserID">
                             </div>
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input type="text" name="name" #name="ngModel" [(ngModel)]="studentsService.selectedStudent.name" placeholder="Nombre">
                             </div>
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="studentsService.selectedStudent.lastName" placeholder="Apellido">
                             </div>
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input type="text" name="gender" #gender="ngModel" [(ngModel)]="studentsService.selectedStudent.gender" placeholder="Genero">
                             </div>
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input type="text" name="birthDay" #birthDay="ngModel" [(ngModel)]="studentsService.selectedStudent.birthDay" placeholder="Fecha de nacimiento">
                             </div>
                             <!--  -->
                             <div class="card-action">
                                 <div class="input-field col s12">
-                                    <button class="btn right">Guardar</button>
-                                    <button class="btn left" (click)="resetForm(studentForm)">Limpiar</button>
+                                    <button class="btn left saveButton">Guardar</button>
+                                    <button class="btn right clearButton" (click)="resetForm(studentForm)">Limpiar</button>
                                 </div>
                             </div>
                             <!--  -->
@@ -37,9 +45,9 @@
             </div>
         </div>
         <!--  -->
-        <div class="col s7">
+        <div class="col s12 dataContainer">
             <table>
-                <thead>
+                 <thead class="dataContainer_Header">
                     <th>ID</th>
                     <th>name</th>
                     <th>lastName</th>
@@ -49,7 +57,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let student of studentsService.students">
-                        <td>{{ student._id }}</td>
+                        <td class="student_id">ID: {{ student._id }}</td>
                         <td>{{ student.name }}</td>
                         <td>{{ student.lastName }}</td>
                         <td>{{ student.gender }}</td>
